@@ -1,0 +1,157 @@
+.warn {
+    height: 5px;
+    color: red;
+    margin-top: 0px;
+    margin-bottom: 9px;
+    font-size: 10px;
+    display: none;
+    float: right;
+}
+
+
+     #cal-1, #cal-2 {
+          margin-left: 12px;
+          margin-top: 10px;
+        }
+        .icon-button {
+          width: 30px;
+        }
+        input {
+          width: 243px;
+          margin-bottom: 8px;
+        }
+
+.loginForm .input-field .prefix ~ input{
+    margin-right:3rem;
+    font-family: DroidArabicKufiRegular !important;
+    font-size: 15px;
+}
+
+#modal2, #myModal{    margin-top: 100px;}
+/*Alia Edit style*/
+#FooterFixed{
+    box-shadow: 3px 3px #cccccc, -1em 0 0.4em #c1c1c1;
+}
+.textContact {
+    font-family: DroidKufi-Regular;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.Join-1{
+    margin-bottom: 0;
+}
+.margin-bottom{
+    margin-bottom: 80px;
+}
+.padding-60 {
+    padding-bottom: 44px !imporant;
+}
+.Amount{
+   color: red; 
+    font-weight: 500;
+    font-size: 22px;
+    padding-left: 10px;
+}
+.addnew{
+        padding-left: 23px;
+    padding-top: 10px;
+    padding-right: 11px;
+    direction: rtl;
+    float: left;+
+}
+.cart2{
+    margin-bottom: -48px;
+}
+.padding-60 {
+    padding-bottom: 57px;
+}
+.sec-space-bottom-2 {
+    padding-bottom: 34px;
+}
+.price span{
+    float: none
+}
+.side-nav .user-view .name{
+        margin-top: 71px;
+}
+.product-media{
+        height: 139px;
+}
+.product-box {
+    margin: 10px auto auto;
+}
+.desc label{
+    font-size: 13px !important;
+}
+.list-view .deal-text {
+   
+    padding-top: 0px;
+}
+.TextWrapper{
+   text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    height: 1.5em;
+    white-space: nowrap;
+    direction: rtl;
+}
+.Cart{
+        width: 39px;
+    left: 8px;
+    float: left;
+    position: absolute;
+    top: 108px;
+}
+.modal .modal-content{
+    padding: 0;
+}
+.alertText{
+        margin-top: 15px;
+}
+.Confirm-1{
+        width: 50%;
+    padding-top: 60px;
+    margin-right: 25%;
+    margin-left: 25%;
+    padding-bottom: 60px;
+    opacity: 1.5;
+}
+.single-caption{
+    text-align: right
+}
+.meta-2{
+        margin-left: 0;
+    padding-right: 0;
+        margin-bottom: 0px;
+}
+/* .product-content .meta-2 li > strong {
+    display: inline-block;
+    width: 100%;
+} */
+.modal-footer2{
+    text-align: center !important;
+}
+.CancelBTN{
+        padding-left: 70px;
+    padding-right: 70px;
+}
+.MB-50{
+        margin-bottom: 54px;
+}
+.icon{
+    width: 25px;
+    padding-left: 5px;
+}
+.product-content .meta > li {
+    padding: 4px 0;
+}
+.contact-form{
+    padding-bottom: 0
+}
+
+ .TabsHeight{
+        height: 100px !important;
+    }
+    .TabsHeight li a{
+        height: 100px !important;
+    }

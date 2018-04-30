@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Green website , design and developed by aliaa hosny">
+        <meta name="author" content="Aliaa Hosny , aliaahosny77@gmail.com">
+
+        <title>Green</title>
+
+        <!-- Font Icon -->
+        <link href="assets/css/plugin/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+
+        <!-- CSS Global -->
+        <link href="assets/css/materialize.min.css" rel="stylesheet" type="text/css">  
+        <link href="assets/css/plugin/bootstrap.min.css" rel="stylesheet" type="text/css">  
+        
+        <link href="assets/css/plugin/bootstrap-select.min.css" rel="stylesheet" type="text/css">           
+        <link href="assets/css/plugin/animate.css" rel="stylesheet" type="text/css"> 
+        <link href="assets/css/plugin/subscribe-better.css" rel="stylesheet" type="text/css"> 
+        <link href="assets/css/plugin/owl.carousel.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom CSS -->
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+        <!-- Color CSS --> 
+
+        <!--[if lt IE 9]>
+        <script src="assets/js/plugin/html5shiv.js"></script>
+        <script src="assets/js/plugin/respond.js"></script>
+        <![endif]-->        
+    </head>
+
+    <body id="home" class="wide " style="display:none">
+
+        
+
+        <!-- WRAPPER -->
+        <main class="wrapper home-wrap"> 
+
+
+            
+            <div class="navbar-fixed">
+                <nav class="NAvColor" >                  
+                <div class="nav-wrapper">
+                         <span class="brand-logo center" id="title_"> </span>
+
+                       <div id="nav-mobile" class="right CartIcon ">
+                              <a  onclick="window.plugins.socialsharing.share('Message and link', null, null, ' http://onelink.to/bkqgmq')"><i class="material-icons">share</i></a> 
+                        
+                </div>
+
+                </div>  
+            </nav>
+           </div>
+            <!-- / Main Header Ends -->  
+            <div class="container-fluid ">
+          
+                <section class="shop-wrap  " style="margin-bottom: 75px;">
+                
+                <div class="shop-content">
+                    <div class="row" id="orderWaiting_"> 
+                            <span class="loadsimage" ></span>
+                <!-- / Shop Ends -->  
+                    </div>
+                </div>
+                </section>
+
+            </div>
+            <footer id="FooterFixed">
+                <div class="container-fluid">
+                    <div class="row text-center" id="appendFooter">
+                    </div>
+                </div>
+            </footer>
+
+            <!-- /FOOTER -->
+        </main>
+        <!-- /WRAPPER -->
+
+              <div class="modal fade" id="modal_2" role="dialog" style="margin-top: 75px;">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content text-center">
+
+                <div class="modal-body">
+                           <div class="container-fluid rel-div">
+
+                   
+                  <p id="NoOrderSub"> </p>
+                    
+
+                  </div>
+                    
+                </div>
+                </div>
+                <div class="modal-footer modal-footer2 text-center">
+                   
+                    <a id="close" class=" CancelBTN waves-effect waves-light btn  " data-dismiss="modal"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="modal2" class="modal" style="margin-top: 20%;">
+            <div class="modal-content text-center">
+                <img src="assets/img/icons/error.png" alt="">
+                <p class="pt-15" id="msgWrongInternet"> </p>
+    
+            </div>
+            <div class="modal-footer text-left" style="margin-left: 35px;">
+                <a id="Reload" class="waves-effect waves-light btn "> </a>
+                <a id="Exit" class="waves-effect waves-light btn pull-left "></a>
+            </div>
+        </div>
+
+        <!-- JS Global -->
+        <script src="assets/js/plugin/jquery-2.2.4.min.js"></script>   
+        <script src="cordova.js"></script> 
+        <script src="assets/js/plugin/bootstrap.min.js"></script>
+        <script src="assets/js/plugin/bootstrap-select.min.js"></script>
+        <script src="assets/js/plugin/owl.carousel.min.js"></script>
+        <script src="assets/js/plugin/jquery.plugin.min.js"></script>
+         <script src="assets/js/materializeModal.js"></script>
+        <!-- Custom JS -->   
+        <script src="assets/js/themeModal.js"></script>
+      <script src="assets/js/link.js"></script>
+     <script src="assets/js/orderAndRequest.js"></script>
+               <script type="text/javascript" src="assets/js/scriptsCommon.js"></script>
+
+<!--    <script src="assets/js/notbackScript.js"></script>-->
+        <script type="text/javascript">
+             $(document).ready(function(){
+    $('ul.tabs').tabs();
+    document.addEventListener("deviceready", onDeviceReady, false);
+    $("#done").click(function(){
+        window.location.href="home.html";
+        
+    })
+  });
+            
+function onBackKeyDown() {
+      $("#modalBack").modal('show');
+}
+
+  function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+            
+            
+        </script>
+
+
+    </body>
+
+</html>

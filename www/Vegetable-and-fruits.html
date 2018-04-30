@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Green website , design and developed by aliaa hosny">
+    <meta name="author" content="Aliaa Hosny , aliaahosny77@gmail.com">
+
+    <title>Green</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <!-- Font Icon -->
+    <link href="assets/css/plugin/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS Global -->
+    <link href="assets/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugin/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/css/plugin/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugin/animate.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugin/subscribe-better.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/plugin/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <!-- <link href="assets/css/theme.css" rel="stylesheet" type="text/css"> -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/themeNumber.css" rel="stylesheet" type="text/css">
+
+    <!-- Color CSS -->
+
+    <!--[if lt IE 9]>
+        <script src="assets/js/plugin/html5shiv.js"></script>
+        <script src="assets/js/plugin/respond.js"></script>
+        <![endif]-->
+</head>
+
+<body id="home" class="wide" style="display:none">
+
+    <!-- WRAPPER -->
+    <main class="wrapper home-wrap">
+
+           <div class="navbar-fixed">
+                <nav class="NAvColor nav-extended" >                  
+                <div class="nav-wrapper">
+                         <span class="brand-logo center" id="title_">  </span>
+
+
+                    <div id="nav-mobile" class="left BackArrow">
+                            <a id="back"> <img alt="" src="assets/img/icons/back-1.png"/> </a>
+                        
+                </div>
+                </div> 
+                <div class="nav-content" id="searchVeg">
+                        <div class="searchbar searchbar-init searchbar-active" >
+                  <div class="searchbar-input">
+                      <!--  onchange="myFunction(this.value)" onkeyup="myFunction(this.value)" -->
+                      <input id="tags" onkeyup="myFunction(this.value)"  type="search" placeholder="">
+                      <a href="#" class="searchbar-clear"></a>
+                  </div>
+                  <a href="#" class="searchbar-cancel">Cancel</a>
+              </div>
+                            </div>
+
+                <div class="nav-content" id="searchfruit" style="display:none">
+                        <div class="searchbar searchbar-init searchbar-active" >
+                  <div class="searchbar-input">
+                      <input  id="tags_" onkeyup="Search(this.value)"  type="search" placeholder="">
+                      <a href="#"  class="searchbar-clear"></a>
+                  </div>
+                  <a href="#" class="searchbar-cancel">Cancel</a>
+              </div>
+                            </div>
+
+               </nav>
+           </div>
+        <!-- / Main Header Ends -->
+
+        <!-- Shop Starts-->
+          <div class="FixedTop">
+               </div>
+            
+        <div class="container-fluid organic-farm-6" style="margin-bottom: 70px;padding-top: 108px; " >
+            <div class="col-xs-12">
+                     <ul id="tabs-swipe-demo" class="tabs header-tabs TabsHeight">
+                        <li class="tab col s3 "><a id="fruitswipe" class="imagewithcaption" href="#test-swipe-1"> <img src="assets/img/icons/banana.png"><p id="fruitTitle"></p> </a></li>
+                        <li class="tab col s3"><a id="vegSwipe"  class="active imagewithcaption" href="#test-swipe-2"><img src="assets/img/icons/carrot.png"><p id="vegtitle"></p></a></li>
+
+                      </ul>
+                </div>
+            <section class="shop-wrap "  id="test-swipe-1">
+            <div class="Search-Frut">
+
+                 <span class="loadsimage"></span>
+              
+
+            </div>
+<!--                خضروات-->
+            <div class="container-fluid rel-div Prod-1">
+
+                <div class="row" id="appendCart1">
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- / Shop Ends -->
+            <section class="shop-wrap " id="test-swipe-2">
+            <div class="Search-Frut">
+
+                 <span class="loadsimage"></span>
+            </div>
+            <div class="container-fluid rel-div Prod-1">
+
+                <div class="row" id="appendCart2">
+
+                </div>
+            </div>
+        </section>
+        </div>
+
+
+    </main>
+    <!-- /WRAPPER -->
+    <!-- Modal Structure -->
+
+    <div class="modal fade" id="modal2_" role="dialog" style="width:96%;    top: 64px;">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content text-center">
+
+                <div class="modal-body">
+                    <img src="assets/img/icons/vegetables-2.png" class="pb-15">
+                    <h6 id="successBox">   </h6>
+                    <p id="textModal"></p>
+                </div>
+                <div class="modal-footer text-left" id="footerText" >
+                
+                   
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="modal fade" id="warn" role="dialog" style="margin-top: 124px;">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content text-center">
+
+                <div class="modal-body">
+                    
+                    <h6 id="msgWarn">   </h6>
+                    
+                </div>
+                <div class="modal-footer text-left">
+                    
+                    <a id="close"  class=" waves-effect waves-light btn pull-left " data-dismiss="modal"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+             <!-- Modal Structure -->
+             <div id="modal2" class="modal" style="margin-top: 20%;">
+                <div class="modal-content text-center">
+                    <img src="assets/img/icons/error.png" alt="">
+                    <p class="pt-15" id="msgWrongInternet"> </p>
+        
+                </div>
+                <div class="modal-footer text-left" style="margin-left: 35px;">
+                    <a id="Reload" class="waves-effect waves-light btn "> </a>
+                    <a id="Exit" class="waves-effect waves-light btn pull-left "></a>
+                </div>
+            </div>
+    <!-- JS Global -->
+    <script src="assets/js/plugin/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="assets/js/plugin/bootstrap.min.js"></script>
+    <script src="assets/js/plugin/bootstrap-select.min.js"></script>
+    <script src="assets/js/plugin/owl.carousel.min.js"></script>
+    <script src="assets/js/plugin/jquery.plugin.min.js"></script>
+    <script src="assets/js/link.js"></script>
+    <script src="assets/js/Vegetable-and-fruits.js"></script>
+    <script src="assets/js/materializeModal.js"></script>
+    <script src="assets/js/themeModal.js"></script>
+    <script type="text/javascript" src="assets/js/scriptsCommon.js"></script>
+
+</body>
+
+</html>

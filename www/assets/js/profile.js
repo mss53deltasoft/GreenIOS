@@ -19,7 +19,7 @@ var lang;
 //     $("#cover").hide();
 //  });
 $(function () {
-    if(language=="ar"){
+    if (language == "ar") {
         $("#title_").html('الصفحة الشخصية');
         $("#appendFooter").html(`                
         <div class="SpecialCol">
@@ -140,8 +140,8 @@ $(function () {
         </form>
 
 
-        <div class="Edit-1">
-            <a id="Edit">
+        <div  id="Edit" class="Edit-1">
+            <a>
                 <img src="assets/img/icons/settings.png">إعدادات الملف الشخصي</a>
                 <span class="loads" style="display:none"></span>
 
@@ -163,7 +163,7 @@ $(function () {
                         </a>
                     <hr>
 
-                    <a id="logout">
+                    <a id="logout" style="display:none">
                         <img src="assets/img/icons/exit.png">تسجيل الخروج</a>
                 </div>
 
@@ -172,9 +172,8 @@ $(function () {
 
         </div>
 `);
-    }
-    else if(language=="en"){
- 
+    } else if (language == "en") {
+
         $("#title_").html('Profile');
         $(".hovercard").html(`
         <form>
@@ -238,8 +237,8 @@ $(function () {
         </form>
 
 
-        <div class="Edit-1">
-            <a id="Edit">
+        <div id="Edit" class="Edit-1">
+            <a >
                 <img src="assets/img/icons/settings.png">Profile settings</a>
                 <span class="loads" style="display:none"></span>
 
@@ -260,7 +259,7 @@ $(function () {
                         <img src="assets/img/icons/questions-circular-button.png">العربية</a>
                     <hr>
 
-                    <a id="logout">
+                    <a id="logout" style="display:none">
                         <img src="assets/img/icons/exit.png">Logout</a>
                 </div>
 
@@ -269,7 +268,7 @@ $(function () {
 
         </div>
 `);
-        
+
         $("#appendFooter").html(`                
         <div class="SpecialCol">
             <a href="Medical.html" >
@@ -327,15 +326,15 @@ $(function () {
     $(".loads").append('<i class="fa fa-spinner fa-spin"></i>');
     $(".loadsimage").append('<i class="fa fa-spinner fa-spin"style="font-size: 39px;color: rgb(35, 141, 150); margin-left: 45%;    margin-top: 44px;"></i>');
 
-    $("#changeLanguageToEnglish").click(function(){
-        lang="en";
-        localStorage.setItem("language",lang);
-        window.location.href="profile.html";
+    $("#changeLanguageToEnglish").click(function () {
+        lang = "en";
+        localStorage.setItem("language", lang);
+        window.location.href = "profile.html";
     });
-    $("#changeLanguageToArabic").click(function(){
-        lang="ar";
-        localStorage.setItem("language",lang);
-        window.location.href="profile.html";
+    $("#changeLanguageToArabic").click(function () {
+        lang = "ar";
+        localStorage.setItem("language", lang);
+        window.location.href = "profile.html";
     });
     // $("#addressCity").hide();
     $("#mailPersonmailPerson").hide();
@@ -356,11 +355,14 @@ $(function () {
 
     });
 
+
     $("#Edit").click(function () {
-        if(language=="ar"){
-            $(".EditProfile-1 strong").css({"padding-left": "36px"});
+        if (language == "ar") {
+            $(".EditProfile-1 strong").css({
+                "padding-left": "36px"
+            });
         }
-        
+
         $(".loads").show();
         $.post(urlSer + '/api/v1/profile?token=' + userId, function (profileData) {
             $(".avatar img").hide();
@@ -416,6 +418,24 @@ $(function () {
         $("#name").text(name);
         $("#phone").text(phone);
         $("#mail").text(mail);
+
+        if (userId == unrealToken) {
+            $("#Edit").hide();
+     
+            if (language == "ar") {
+                $("#name").html("زائر");
+                $("#phone").html(" لا يوجد رقم جوال");
+                $("#logout").html('<img src="assets/img/icons/exit.png">تسجيل دخول');
+                
+            } else if (language == "en") {
+                $("#name").html("guest");
+                $("#phone").html("Phone invalid ");
+                $("#logout").html('<img src="assets/img/icons/exit.png">Login');
+                $("#logout").html("Login");
+            }
+            $("#logout").show();
+        }
+        else  $("#logout").show();
         // $("#addressCity").hide();
         $("#mailPersonmailPerson").hide();
     })
@@ -467,13 +487,12 @@ $(function () {
 
             $.post(urlSer + '/api/v1/changeProfile?token=' + userId, data);
         } else if (!filter.test(email.value)) {
-            if(language=="ar"){
+            if (language == "ar") {
                 $("#mailTxt").val('هذا الأيميل غير صحيح');
-                }
-                else if(language=="en"){
-                    $("#mailTxt").val('Invalid email');
-                }
-           
+            } else if (language == "en") {
+                $("#mailTxt").val('Invalid email');
+            }
+
             email.focus;
             return false;
         } else {

@@ -1,5 +1,6 @@
 // var oldPhoneval =document.getElementById("phone_number").value;
-
+var phoneLONG;
+var  passwordLONG;
 function validatePhone(char) {
 
     $('#phone_number').on("paste",function(e) {
@@ -70,6 +71,8 @@ $(function () {
     $("#phone_number").blur(function () {
         if ($("#phone_number").val().length == 10) {
             $("#warnPhone").hide();
+            phoneLONG = true;
+
         }
     });
     if (language == "ar") {
@@ -99,6 +102,9 @@ $(function () {
            <div class=" col s12 text-center">
                <div type="submit" id="login" class="theme-btn waves-effect waves-light btn"> <b> دخول </b><span class="loads" style="display:none"></span></a>                                            
            </div>
+           <div class=" col s12 text-center">
+           <div type="submit" id="loginGuest" class="theme-btn waves-effect waves-light btn"> <b> الدخول كزائر </b></a>                                            
+       </div>
            <div class=" col s12 text-center  " style="padding-top: 25px;">
                <a href="registration.html"  > لا يوجد لديك حساب؟ <span class="red-text">حساب جديد</span></a>                                          
            </div>
@@ -131,7 +137,10 @@ $(function () {
     
                </div>
                <div class=" col s12 text-center">
-                   <div type="submit" id="login" class="theme-btn waves-effect waves-light btn"> <b> login </b>    <span class="loads" style="display:none"></span></a>                                            
+                   <div type="submit" id="login" class="theme-btn waves-effect waves-light btn"> <b> Login </b>    <span class="loads" style="display:none"></span></a>                                            
+               </div>
+               <div class=" col s12 text-center">
+               <div type="submit" id="loginGuest" class="theme-btn waves-effect waves-light btn"> <b> Login as guest </b></a>                                            
                </div>
                <div class=" col s12 text-center  " style="padding-top: 25px;">
                    <a href="registration.html"  > don't have an account   ? <span class="red-text"> New account</span></a>                                          
@@ -175,11 +184,21 @@ $(function () {
         }, 50); // 20 times/second
 
     });
-
+        $("#loginGuest").click(function(){
+        if(userId==undefined){
+            localStorage.setItem('user_id',unrealToken);
+            localStorage.setItem('user_name',"unrealName");
+            window.location.href="home.html";
+         }
+        })
 
     $("#login").click(function () {
         var phone_number = $("#phone_number").val();
         var password = $("#password").val();
+
+        if(phone_number.length == 10){phoneLONG = true;}else{phoneLONG = false;}
+        if(password!=""){passwordLONG = true;}else{passwordLONG = false;}
+
         if((phone_number!="") && (password!="")){
             $("#warning").hide();
         if (phoneLONG && passwordLONG) {
@@ -221,6 +240,7 @@ $(function () {
                         else{
                             localStorage.setItem('user_name', response.name);
                             localStorage.setItem('user_id', response.data.token);
+                            window.FirebasePlugin.grantPermission()
                             window.FirebasePlugin.subscribe("all");
                             window.location.href = "home.html?id=1";
                         }
@@ -270,6 +290,7 @@ $(function () {
                         localStorage.setItem('user_name', response.name);
                         localStorage.setItem('user_id', response.data.token);
                         window.FirebasePlugin.subscribe("all");
+                        window.FirebasePlugin.grantPermission();
                         window.location.href = "home.html?id=1";
                     },
                     error: function (jqXHR, textStatus, errorThrown) {

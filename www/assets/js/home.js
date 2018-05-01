@@ -14,7 +14,6 @@ var url;
 
 $(function(){
 
-    
     url=window.location.href;
     nav= url.split("=").pop();
     if(nav=="1"){
@@ -254,7 +253,6 @@ else if(language=="en"){
             localStorage.removeItem('typeorder'); 
     })
     
-
 
 })
     function onLoad() {

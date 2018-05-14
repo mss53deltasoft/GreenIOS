@@ -1,8 +1,8 @@
 var nav;
 var url;
-$(function(){
+$(function () {
 
-    if(language=="ar"){
+  if (language == "ar") {
     $(".rowx").html(`<h3 class="text-center">أدخل الكود</h3>  
         <form class="col s12 gray-control ">
          <div class="row">
@@ -28,8 +28,7 @@ $(function(){
        
        <div class="pt-15 col-sm-12 text-center">                                               
        </div>`);
-    }
-    else if(language=="en"){
+  } else if (language == "en") {
     $(".rowx").html(`<h3 class="text-center">Enter Code</h3>  
         <form class="col s12 gray-control ">
          <div class="row">
@@ -62,16 +61,22 @@ $(function(){
   $(".loads").append('<i class="fa fa-spinner fa-spin"></i>');
 
 
-    $("#sumbit").click(function(){
+  $("#sumbit").click(function () {
     $(".loads").show();
     var code = $("#code").val();
+    if (nav == "Forget"){
+      firebaseImplement.forgetPassword(code);
+
+    }else{
+      firebaseImplement.verify(code, nav);
+    }
     // var verID = localStorage.getItem('verificationId');
     // firebaseImplement.verify(verID, code, nav);
-    firebaseImplement.verify(code, nav);
-  })
-    $("#Resend").click(function(){
+  });
 
-        var phone = "+2" + localStorage.getItem('phone_number') ;
+  $("#Resend").click(function () {
+
+    var phone = "+2" + localStorage.getItem('phone_number');
     firebaseImplement.phoneAuth(phone);
 
   })

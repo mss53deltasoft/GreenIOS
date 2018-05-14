@@ -154,6 +154,7 @@ $(function () {
        <div class="pt-15 col-sm-12 text-center">                                               
        </div>`)
     }
+    if (cordova.platformId == "android"){$( "#loginGuest" ).hide()}
     $(".loads").append('<i class="fa fa-spinner fa-spin"></i>');
     var oldPhoneval = document.getElementById("phone_number").value;
     /// Validation For Passowrd;

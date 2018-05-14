@@ -69,8 +69,9 @@ $(function(){
             var password_confirmation=$("#password_confirmation").val();
             if( password !== "" && password === password_confirmation ){
                 var code = localStorage.getItem("tokenPass");
-                var password=$("#password").val();
-                var data ={	"code": code,	"password": password};
+                var phone_number = localStorage.getItem('phone_number');
+                password =$("#password").val();
+                var data ={ "phone_number": phone_number,	"code": code,	"password": password};
 
                 $.post(urlSer+"/api/v1/changeForgetPass",data,function(allData){
                     console.log(allData);

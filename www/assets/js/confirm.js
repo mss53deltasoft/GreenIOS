@@ -104,7 +104,9 @@ $(function () {
     $(allBoxesID).each(function (i, v) {
 
         allBoxes.push({
-            "id": v.id
+            "id": v.id,
+            "amount":v.amount
+
         })
     })
     $(paperdesc).each(function (i, v) {

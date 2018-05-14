@@ -47,33 +47,45 @@ $(function(){
             // var data={ "name":name,"phone_number":phone_number,"password":password,"password_confirmation":password_confirmation};
 
 
-            $.post(urlSer+"/api/v1/checkPhoneNumber",dataphone,function(allData){
-                console.log(allData);
-                if(allData.success==="true"){
-                    var phone = "+966"+ phone_number;
-                        //  var phone = "+2"+ phone_number;
+            // $.post(urlSer+"/api/v1/checkPhoneNumber",dataphone,function(allData){
+            //     console.log(allData);
+            //     if(allData.success==="true"){
+            //         var phone = "+966"+ phone_number;
+            //             //  var phone = "+2"+ phone_number;
 
-                    window.FirebasePlugin.getToken(function(token) {
-                        // save this server-side and use it to push notifications to this device
-                    localStorage.setItem('token',token);
+            //         window.FirebasePlugin.getToken(function(token) {
+            //             // save this server-side and use it to push notifications to this device
+            //         localStorage.setItem('token',token);
                         
-                        console.log(token);
-                    }, function(error) {
-                        console.error(error);
-                    });
-                    // localStorage.setItem("Phone",phone);
-                   firebaseImplement.phoneAuth(phone, "Forget");
+            //             console.log(token);
+            //         }, function(error) {
+            //             console.error(error);
+            //         });
+            //         // localStorage.setItem("Phone",phone);
+            //        firebaseImplement.phoneAuth(phone, "Forget");
 
-                }else{
-                    if(language=="ar"){
-                        $("#warnPhone").show().html("الرقم الذي ادخلت غير صحيح");
-                    }
-                   else if(language=="en"){
-                        $("#warnPhone").show().html("Error number");
-                    }
+            //     }else{
+            //         if(language=="ar"){
+            //             $("#warnPhone").show().html("الرقم الذي ادخلت غير صحيح");
+            //         }
+            //        else if(language=="en"){
+            //             $("#warnPhone").show().html("Error number");
+            //         }
                    
+            //     }
+            // });
+             var nav = "Forget";
+            $.post(urlSer + "/api/v1/getForgetPass", dataphone, function (allData) {
+
+                if (allData.success) {
+                    window.location.href = "confirmationcode.html?id=" + nav;
+
+                } else {
+                    $("#warnCode").show().html("حدث خطأ في التسجيل");
                 }
+
             });
+
 
     });
 

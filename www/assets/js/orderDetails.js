@@ -156,12 +156,20 @@ $(function () {
                 image = "assets/img/products/ourgroup.png";
 
             size = v.size;
+         
             if (language == "ar") {
-                $("#getdata").append('<div class="col-sm-12" id=' + v.id + ' ><div class="deal-item list-view"><div class="deal-content"><div class="deal-text deal-text2"><div class="listing-badge now-open noOfKilo' + v.size + '" id="noOfKilo' + v.size + '" style="background: rgb(218, 93, 121);direction: rtl;"><span>' + v.size + '</span><span> كيلو </span> </div><h2 class="fsz-20 "> <a href="#"> <span class="light-font">تشكيلة</span> <strong id="nameOfDesc">' + v.name + ' </strong> </a> </h2><div id="description"><p class="">' + v.description.replace(/,\s*$/, "").split("المزيد")[0] + '</p><a  onclick="getDetails(' + v.id + ')" style="color: red;font-size:12px" >المزيد</a></div><div class="price "><span> السعر  :</span><strong id="price">  ' + v.total + '  ريال سعودي</strong></div></div><div class="img img2"> <img id="img_Src" alt="" src=' + image + '> </div></div></div></div>');
+                $("#getdata").append('<div class="col-sm-12" id=' + v.id + ' ><div class="deal-item list-view"><div class="deal-content"><div class="deal-text deal-text2"><div class="listing-badge now-open noOfKilo' + v.size + '" id="noOfKilo' + v.size + '" style="background: rgb(218, 93, 121);direction: rtl;"><span>' + v.size + '</span><span> كيلو </span> </div><h2 class="fsz-20 "> <a href="#"> <span class="light-font">تشكيلة</span> <strong id="nameOfDesc">' + v.name + ' </strong> </a> </h2><div id="description"><p class="">' + v.description.replace(/,\s*$/, "").split("المزيد")[0] + '</p><a  onclick="getDetails(' + v.id + ')" style="color: red;font-size:12px" >المزيد</a></div><div id="amount_'+ v.id+'"><span> الكمية : </span><strong>  ' + v.amount + '   </strong></div><div class="price"><span> سعر الكرتونة الواحدة  :</span><strong id="price">  ' + v.total + '  ريال سعودي</strong></div></div><div class="img img2"> <img id="img_Src" alt="" src=' + image + '> </div></div></div></div>');
 
             } else if (language == "en") {
-                $("#getdata").append('<div class="col-sm-12" id=' + v.id + ' ><div class="deal-item list-view"><div class="deal-content"><div class="deal-text deal-text2"><div class="listing-badge now-open noOfKilo' + v.size + '" id="noOfKilo' + v.size + '" style="background: rgb(218, 93, 121);direction:ltr;"><span>' + v.size + '</span><span> kilo </span> </div><h2 class="fsz-20 "> <a href="#"> <span class="light-font">Collection</span> <strong id="nameOfDesc">' + v.name_en + ' </strong> </a> </h2><div id="description"><p class="">' + v.description_en.replace(/,\s*$/, "").split("more")[0] + '</p><a  onclick="getDetails(' + v.id + ')" style="color: red;font-size:15px">more</a></div><div class="price "><strong> Price:</strong><strong id="price">  ' + v.total + ' SAR </strong></div></div><div class="img img2"> <img id="img_Src" alt="" src=' + image + '> </div></div></div></div>');
+                $("#getdata").append('<div class="col-sm-12" id=' + v.id + ' ><div class="deal-item list-view"><div class="deal-content"><div class="deal-text deal-text2"><div class="listing-badge now-open noOfKilo' + v.size + '" id="noOfKilo' + v.size + '" style="background: rgb(218, 93, 121);direction:ltr;"><span>' + v.size + '</span><span> kilo </span> </div><h2 class="fsz-20 "> <a href="#"> <span class="light-font">Collection</span> <strong id="nameOfDesc">' + v.name_en + ' </strong> </a> </h2><div id="description"><p class="">' + v.description_en.replace(/,\s*$/, "").split("more")[0] + '</p><a  onclick="getDetails(' + v.id + ')" style="color: red;font-size:15px">more</a></div><div id="amount_'+ v.id+'"><span> Amount  :</span><strong>  ' + v.amount + '   </strong></div><div class="price "><strong> Price of Box:</strong><strong id="price">  ' + v.total + ' SAR </strong></div></div><div class="img img2"> <img id="img_Src" alt="" src=' + image + '> </div></div></div></div>');
 
+            }
+            if(v.amount==null){
+                $("#amount_"+ v.id).hide();
+            }
+            else if(v.amount!=null||v.amount!=undefined)
+            {
+                $("#amount_"+ v.id).show();
             }
 
             if (size == "6") {
